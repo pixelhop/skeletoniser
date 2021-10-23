@@ -1,8 +1,18 @@
-import './style.css'
+const videoEl = document.querySelector<HTMLVideoElement>('video');
 
-const app = document.querySelector<HTMLDivElement>('#app')!
+async function initCamera() {
+  const stream = await navigator.mediaDevices.getUserMedia({
+    video: {
+      facingMode: 'user',
+      width: { ideal: 640 },
+      height: { ideal: 480 },
+    },
+    audio: false,
+  });
 
-app.innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+  if (videoEl) {
+    videoEl.srcObject = stream;
+  }
+}
+
+initCamera();
