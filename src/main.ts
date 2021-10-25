@@ -55,7 +55,7 @@ async function start() {
     if (poses[0]) {
       skeleton.draw(poses[0]);
     }
-    console.log(poses);
+
     requestAnimationFrame(render);
   }
 
