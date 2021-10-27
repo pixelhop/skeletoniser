@@ -374,7 +374,7 @@ export class Skeleton {
             rotation: angle - 270,
             offsetX: 0.5,
             offsetY: 0.1,
-          }, false);
+          });
         }
       }
     
